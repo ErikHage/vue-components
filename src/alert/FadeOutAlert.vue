@@ -8,6 +8,10 @@
 export default {
   name: "FadeOutAlert",
 
-  props: ['isVisible', 'alertType', 'message'],
+  props: {
+    isVisible: Boolean,
+    alertType: String,
+    message: String,
+  },
 }
 </script>
