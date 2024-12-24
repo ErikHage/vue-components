@@ -16,11 +16,17 @@ export default {
       type: Date,
       required: true,
     },
+    locale: {
+      type: String,
+      required: false,
+    },
   },
   computed: {
     formattedDate() {
       const options = this.parseDateFormat(this.format);
-      return new Intl.DateTimeFormat("en-US", options).format(this.date);
+      const locale = this.locale ? this.locale : "en-US";
+
+      return new Intl.DateTimeFormat(locale, options).format(this.date);
     },
   },
   methods: {
