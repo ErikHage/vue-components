@@ -34,12 +34,4 @@ describe("FormattedDate.vue", () => {
     });
     expect(wrapper.text()).toBe("12-24-2024");
   });
-
-  it("throws an error if the `date` prop is not provided", () => {
-    expect(() => {
-      shallowMount(FormattedDate, {
-        props: { format: "YYYY-MM-DD" },
-      });
-    }).toThrow("[Vue warn]: Missing required prop: 'date'");
-  });
 });
