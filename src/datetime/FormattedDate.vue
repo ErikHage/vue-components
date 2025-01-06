@@ -18,20 +18,18 @@ export default {
     },
     locale: {
       type: String,
-      required: false,
+      default: "en-US",
     },
   },
   computed: {
     formattedDate() {
       const options = this.parseDateFormat(this.format);
-      const locale = this.locale ? this.locale : "en-US";
 
-      return new Intl.DateTimeFormat(locale, options).format(this.date);
+      return new Intl.DateTimeFormat(this.locale, options).format(this.date);
     },
   },
   methods: {
     parseDateFormat(format) {
-      // Map format string to Intl.DateTimeFormat options
       const options = {};
       if (format.includes("YYYY")) options.year = "numeric";
       if (format.includes("MM")) options.month = "2-digit";
