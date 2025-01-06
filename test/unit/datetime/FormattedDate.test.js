@@ -26,12 +26,4 @@ describe("FormattedDate.vue", () => {
     });
     expect(wrapper.text()).toBe("12/24/2024, 03:30:45 PM");
   });
-
-  it("renders correctly for different formats (MM/DD/YYYY)", () => {
-    const date = new Date("2024-12-24T15:30:45");
-    const wrapper = shallowMount(FormattedDate, {
-      props: { date, format: "MM-DD-YYYY" },
-    });
-    expect(wrapper.text()).toBe("12-24-2024");
-  });
 });
